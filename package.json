@@ -2,5 +2,27 @@
   "name": "anym-utility-css",
   "version": "1.0.0",
   "description": "A utility CSS library for anym",
-  "author": "Soheil Saheb-Jamii <anym@hotmail.fr>"
+  "author": "Soheil Saheb-Jamii <anym@hotmail.fr>",
+  "main": "anym-utility.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anymfah/utility-css.git"
+  },
+  "keywords": [
+    "CSS",
+    "SCSS",
+    "SASS",
+    "Utility",
+    "Framework",
+    "Mixins",
+    "Functions"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anymfah/utility-css/issues"
+  },
+  "homepage": "https://github.com/Anymfah/utility-css#readme"
 }
