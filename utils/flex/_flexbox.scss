@@ -1,0 +1,30 @@
+@use '../../abstracts/mixins';
+
+.flex {
+  display: flex;
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+
+  &-nowrap {
+    flex-wrap: nowrap;
+  }
+  &-grow {
+    flex-grow: 1;
+  }
+
+  &-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &-center {
+    @include mixins.centered;
+  }
+}

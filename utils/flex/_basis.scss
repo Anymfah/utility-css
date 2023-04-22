@@ -1,0 +1,7 @@
+
+@for $i from 1 through 30 {
+  $val: $i * 10;
+  .flex-basis-#{$val} {
+    flex-basis: #{$val}px;
+  }
+}
