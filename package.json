@@ -27,8 +27,6 @@
   "homepage": "https://github.com/Anymfah/utility-css#readme",
   "publishConfig": {
     "access": "public",
-    "registry": "https://npm.pkg.github.com/",
-    "scope": "@anymfah",
-    "tag": "latest"
+    "@anymfah:registry": "https://npm.pkg.github.com/"
   }
 }
