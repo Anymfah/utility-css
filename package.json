@@ -24,5 +24,11 @@
   "bugs": {
     "url": "https://github.com/Anymfah/utility-css/issues"
   },
-  "homepage": "https://github.com/Anymfah/utility-css#readme"
+  "homepage": "https://github.com/Anymfah/utility-css#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/",
+    "scope": "@anymfah",
+    "tag": "latest"
+  }
 }
