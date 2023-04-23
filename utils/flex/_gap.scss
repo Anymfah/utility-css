@@ -1,0 +1,11 @@
+
+@for $i from 1 through 10 {
+  $val: $i * 5;
+  .gap-#{$val} {
+    gap: #{$val}px;
+  }
+}
+
+.gap {
+  gap: 10px;
+}
