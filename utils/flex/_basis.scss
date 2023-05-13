@@ -1,11 +1,14 @@
 
-@for $i from 1 through 30 {
-  $val: $i * 10;
-  .flex-basis-#{$val} {
-    flex-basis: #{$val}px;
+@mixin flex-basis($max: 400) {
+  $max: $max / 10;
+  @for $i from 1 through $max {
+    $val: $i * 10;
+    .flex-basis-#{$val} {
+      flex-basis: #{$val}px;
+    }
   }
-}
 
-.basis {
-  flex-basis: 100px;
+  .basis {
+    flex-basis: 100px;
+  }
 }

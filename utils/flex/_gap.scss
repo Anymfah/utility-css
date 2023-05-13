@@ -1,11 +1,14 @@
 
-@for $i from 1 through 10 {
-  $val: $i * 5;
-  .gap-#{$val} {
-    gap: #{$val}px;
+@mixin flex-gap($max: 50, $steps: 5) {
+  $max: $max / $steps;
+  @for $i from 1 through $max {
+    $val: $i * $steps;
+    .gap-#{$val} {
+      gap: #{$val}px;
+    }
   }
-}
 
-.gap {
-  gap: 10px;
+  .gap {
+    gap: $steps * 2;
+  }
 }

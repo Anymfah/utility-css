@@ -28,5 +28,8 @@
   "publishConfig": {
     "access": "public",
     "@anymfah:registry": "https://npm.pkg.github.com/"
+  },
+  "dependencies": {
+    "sass": "^1.62.1"
   }
 }

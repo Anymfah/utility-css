@@ -144,6 +144,46 @@
   flex-basis: 300px;
 }
 
+.flex-basis-310 {
+  flex-basis: 310px;
+}
+
+.flex-basis-320 {
+  flex-basis: 320px;
+}
+
+.flex-basis-330 {
+  flex-basis: 330px;
+}
+
+.flex-basis-340 {
+  flex-basis: 340px;
+}
+
+.flex-basis-350 {
+  flex-basis: 350px;
+}
+
+.flex-basis-360 {
+  flex-basis: 360px;
+}
+
+.flex-basis-370 {
+  flex-basis: 370px;
+}
+
+.flex-basis-380 {
+  flex-basis: 380px;
+}
+
+.flex-basis-390 {
+  flex-basis: 390px;
+}
+
+.flex-basis-400 {
+  flex-basis: 400px;
+}
+
 .basis {
   flex-basis: 100px;
 }
@@ -189,7 +229,7 @@
 }
 
 .gap {
-  gap: 10px;
+  gap: 10;
 }
 
 .align-center {
