@@ -1,2 +1,5 @@
 @forward 'abstracts/mixins';
-@forward './utils';
+@forward './utils/flex/flexbox';
+@forward './utils/flex/basis';
+@forward './utils/flex/gap';
+@forward './utils/flex/align';
