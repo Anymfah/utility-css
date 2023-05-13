@@ -1,6 +1,6 @@
 {
   "name": "anym-utility-css",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A utility CSS library for anym",
   "author": "Soheil Saheb-Jamii <anym@hotmail.fr>",
   "main": "anym-utility.scss",
