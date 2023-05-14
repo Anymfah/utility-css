@@ -1,9 +1,8 @@
 /// @access public
 /// @param {String} $time [0.3s] - Transition time
-@mixin transition($time: 0.3s) {
-  transition: all $time cubic-bezier(.005,.555,.44,.995);
+@mixin transition($time: 0.3s, $property: all, $ease: cubic-bezier(.28,0,0,1), $delay: 0s) {
+  transition: unquote($property) $time $ease $delay;
 }
-
 /// @access public
 @mixin centered {
   display: flex;
