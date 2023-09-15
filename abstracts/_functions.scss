@@ -1,0 +1,88 @@
+/// Replace `$search` with `$replace` in `$string`
+/// @author Kitty Giraudel
+/// @link https://css-tricks.com/snippets/sass/str-replace-function/
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+/// Turn a hex color into an rgb color
+/// @author Soheil Saheb-Jamii
+/// @link https://github.com/Anymfah
+/// @param {string} $color - Hex color
+/// @return {string} - RGB color
+@function to-rgb($color) {
+  @return red($color) + ", " + green($color) + ", " + blue($color);
+}
+
+/// Transform a string to a list of strings
+/// @author Soheil Saheb-Jamii
+/// @link https://github.com/Anymfah
+/// @param {string} $string - String to transform
+/// @param {string} $separator (' ') - Separator
+/// @param {number} $start (1) - Start index
+/// @return {list} - List of strings
+@function str-to-list($string, $separator: ' ', $start: 1) {
+  $st: str-slice($string, $start);
+  $list: ();
+  $indexOfFirstSpace: str-index($st,$separator);
+  @if $indexOfFirstSpace == null {
+    $list: ($st);
+  } @else {
+    $list: (str-slice($st, 1, $indexOfFirstSpace - 1));
+    $list: join($list,str-to-list($st, $separator, $indexOfFirstSpace + 1));
+  }
+  @return $list;
+}
+
+/// Replace `$search` with `$replace` in `$string`
+/// @author Kitty Giraudel
+/// @link https://css-tricks.com/snippets/sass/str-replace-function/
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+
+/// Replace all occurences of $search by $replace in each string of $list
+/// @author Soheil Saheb-Jamii
+/// @link https://github.com/Anymfah
+/// @param {string} $list - List of strings
+/// @param {string} $search - Substring to replace
+/// @param {string} $replace ('') - New value
+/// @return {string} - Updated list
+@function replace-in-list($list, $search, $replace) {
+  $output: $list;
+  @if type-of($list) == list {
+    $newlist: ();
+    @each $item in $list {
+      $newlist: append($newlist, replace-in-list($item, $search, $replace));
+    }
+    @return $newlist;
+  } @else if ($list == $search){
+    $output: unquote($replace);
+  } @else if (type-of($list) == string) {
+    $test_list: str-to-list($list, '.');
+    $search_item: str-replace($search, '.', '');
+    @each $test_item in $test_list {
+      @if ($test_item and $search_item and unquote($test_item) == unquote($search_item)) {
+        $output: str-replace($list, $search, $replace);
+      }
+    }
+  }
+  @return $output;
+}
